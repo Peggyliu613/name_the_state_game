@@ -27,9 +27,8 @@ while len(player_ans_list) < 50:
         pen.write(player_ans)
         player_ans_list.append(player_ans)
 
-for state in state_list:
-    if state not in player_ans_list:
-        player_missing_state_list.append(state)
+
+player_missing_state_list = [state for state in state_list if state not in player_ans_list]
 
 states_to_learn = {
     "states_you_missed": player_missing_state_list
